@@ -14,6 +14,7 @@
     <sprite>sprites\spr_centaur</sprite>
     <sprite>sprites\sprite6</sprite>
     <sprite>sprites\spr_eyeEnemy</sprite>
+    <sprite>sprites\sprite8</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_dungeon</background>
@@ -28,6 +29,14 @@
     <script>scripts\draw_attack_indicator.gml</script>
     <script>scripts\calculate_valid_attacks.gml</script>
     <script>scripts\handle_attack.gml</script>
+    <script>scripts\move_towards.gml</script>
+    <script>scripts\handle_gameStep.gml</script>
+    <script>scripts\handle_move.gml</script>
+    <scripts name="cursor">
+      <script>scripts\reset_cursor.gml</script>
+      <script>scripts\set_move_cursor.gml</script>
+      <script>scripts\is_moving.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_cursor</object>

@@ -52,6 +52,9 @@
 y_diff = abs(y-obj_centaur.y);
 if(x_diff &lt;= 64 &amp;&amp; y_diff &lt;= 96) {
     image_index = 1;
+    
+    //TODO: move_towards_player
+    //y += 32;
 }else {
     image_index = 0;
 }
