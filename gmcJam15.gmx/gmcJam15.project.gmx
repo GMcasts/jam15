@@ -8,9 +8,12 @@
   <sprites name="sprites">
     <sprite>sprites\spr_cursor</sprite>
     <sprite>sprites\sprite2</sprite>
+    <sprite>sprites\spr_ui</sprite>
     <sprite>sprites\spr_dungeonFloor1</sprite>
     <sprite>sprites\spr_dungeonWall1</sprite>
     <sprite>sprites\spr_centaur</sprite>
+    <sprite>sprites\sprite6</sprite>
+    <sprite>sprites\spr_eyeEnemy</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_dungeon</background>
@@ -34,6 +37,7 @@
     <object>objects\obj_player</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_fog</object>
+    <object>objects\obj_eyeEnemy</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
