@@ -22,6 +22,8 @@
     <script>scripts\handle_vertical_cursor.gml</script>
     <script>scripts\handle_horizontal_cursor.gml</script>
     <script>scripts\calculate_valid_moves.gml</script>
+    <script>scripts\draw_attack_indicator.gml</script>
+    <script>scripts\calculate_valid_attacks.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_cursor</object>
@@ -29,6 +31,7 @@
     <object>objects\obj_dungeonWall1</object>
     <object>objects\obj_centaur</object>
     <object>objects\obj_player</object>
+    <object>objects\obj_wall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
