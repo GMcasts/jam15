@@ -53,13 +53,13 @@ valid_attacks = ds_map_create();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if(keyboard_check_pressed(vk_enter)) {
-    if(draw_movement) {
+            <string>if(keyboard_check_pressed(vk_enter)) {
+    if(draw_movement || draw_attack) {
         y_cell_diff = (obj_cursor.y - y) / 32;
         x_cell_diff = (obj_cursor.x - x) / 32;
         handle_vertical_cursor(y_cell_diff);
         handle_horizontal_cursor(x_cell_diff);
+        handle_attack(x_cell_diff, y_cell_diff);
     }
 }
 </string>

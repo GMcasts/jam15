@@ -24,6 +24,7 @@
     <script>scripts\calculate_valid_moves.gml</script>
     <script>scripts\draw_attack_indicator.gml</script>
     <script>scripts\calculate_valid_attacks.gml</script>
+    <script>scripts\handle_attack.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_cursor</object>

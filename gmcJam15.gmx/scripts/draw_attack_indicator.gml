@@ -21,7 +21,7 @@ if(type=="Centaur") {
             }
         }
         // right top
-        if(!instance_position(x+32,y, obj_dungeonWall1)){
+        if(!instance_position(x+32,y-32, obj_dungeonWall1)){
             draw_rectangle(x+32,y-32,x+64,y,false);
         }
         // top side
