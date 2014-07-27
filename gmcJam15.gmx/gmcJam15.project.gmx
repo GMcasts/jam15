@@ -21,6 +21,7 @@
     <sprite>sprites\spr_inventorySlot</sprite>
     <sprite>sprites\spr_tab</sprite>
     <sprite>sprites\spr_lumpOfRoyalJelly</sprite>
+    <sprite>sprites\spr_unseen</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_dungeon</background>

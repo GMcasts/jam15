@@ -75,6 +75,7 @@
     <instance objName="obj_eyeEnemy" x="448" y="128" name="inst_F632FFAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_statue" x="224" y="256" name="inst_E0A95FA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lumpOfRoyalJelly" x="448" y="256" name="inst_367A9D9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fog" x="32" y="384" name="inst_3EEFF7AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -25,115 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_alpha(0.95);
-draw_set_color(c_black);
-
-for(i=0;i&lt;=room_width;i+=32) {
-    for(j=0;j&lt;=room_height;j+=32) {
-        if(!instance_position(i,j,obj_player) &amp;&amp;
-            //right x3
-            !instance_position(i+32,j,obj_player) &amp;&amp;
-            !instance_position(i+64,j,obj_player) &amp;&amp;
-            !instance_position(i+96,j,obj_player) &amp;&amp;
-            // 3x right +y
-            !instance_position(i+32,j+32,obj_player) &amp;&amp;
-            !instance_position(i+64,j+32,obj_player) &amp;&amp;
-            !instance_position(i+96,j+32,obj_player) &amp;&amp;
-            !instance_position(i+32,j+64,obj_player) &amp;&amp;
-            !instance_position(i+64,j+64,obj_player) &amp;&amp;
-            !instance_position(i+96,j+64,obj_player) &amp;&amp;
-            !instance_position(i+32,j+96,obj_player) &amp;&amp;
-            !instance_position(i+64,j+96,obj_player) &amp;&amp;
-            !instance_position(i+96,j+96,obj_player) &amp;&amp;
-            //left x3
-            !instance_position(i-32,j,obj_player) &amp;&amp;
-            !instance_position(i-64,j,obj_player) &amp;&amp;
-            !instance_position(i-96,j,obj_player) &amp;&amp;
-            // 3x up
-            !instance_position(i-32,j+32,obj_player) &amp;&amp;
-            !instance_position(i-64,j+32,obj_player) &amp;&amp;
-            !instance_position(i-96,j+32,obj_player) &amp;&amp;
-            !instance_position(i-32,j+64,obj_player) &amp;&amp;
-            !instance_position(i-64,j+64,obj_player) &amp;&amp;
-            !instance_position(i-96,j+64,obj_player) &amp;&amp;
-            !instance_position(i-32,j+96,obj_player) &amp;&amp;
-            !instance_position(i-64,j+96,obj_player) &amp;&amp;
-            !instance_position(i-96,j+96,obj_player) &amp;&amp;
-
-            // up x3            
-            !instance_position(i,j+32,obj_player) &amp;&amp;
-            !instance_position(i,j+64,obj_player) &amp;&amp;
-            !instance_position(i,j+96,obj_player) &amp;&amp;
-            //3x
-            !instance_position(i+32,j+32,obj_player) &amp;&amp;
-            !instance_position(i+32,j+64,obj_player) &amp;&amp;
-            !instance_position(i+32,j+96,obj_player) &amp;&amp;
-            !instance_position(i+64,j+32,obj_player) &amp;&amp;
-            !instance_position(i+64,j+64,obj_player) &amp;&amp;
-            !instance_position(i+64,j+96,obj_player) &amp;&amp;
-            !instance_position(i+96,j+32,obj_player) &amp;&amp;
-            !instance_position(i+96,j+64,obj_player) &amp;&amp;
-            !instance_position(i+96,j+96,obj_player) &amp;&amp;
-            
-            //down x3
-            !instance_position(i,j-32,obj_player) &amp;&amp;
-            !instance_position(i,j-64,obj_player) &amp;&amp;
-            !instance_position(i,j-96,obj_player) &amp;&amp;
-            //3x
-            !instance_position(i+32,j-32,obj_player) &amp;&amp;
-            !instance_position(i+32,j-64,obj_player) &amp;&amp;
-            !instance_position(i+32,j-96,obj_player) &amp;&amp;
-            !instance_position(i+64,j-32,obj_player) &amp;&amp;
-            !instance_position(i+64,j-64,obj_player) &amp;&amp;
-            !instance_position(i+64,j-96,obj_player) &amp;&amp;
-            !instance_position(i+96,j-32,obj_player) &amp;&amp;
-            !instance_position(i+96,j-64,obj_player) &amp;&amp;
-            !instance_position(i+96,j-96,obj_player) &amp;&amp;
-            //3x
-            !instance_position(i-32,j-32,obj_player) &amp;&amp;
-            !instance_position(i-32,j-64,obj_player) &amp;&amp;
-            !instance_position(i-32,j-96,obj_player) &amp;&amp;
-            !instance_position(i-64,j-32,obj_player) &amp;&amp;
-            !instance_position(i-64,j-64,obj_player) &amp;&amp;
-            !instance_position(i-64,j-96,obj_player) &amp;&amp;
-            !instance_position(i-96,j-32,obj_player) &amp;&amp;
-            !instance_position(i-96,j-64,obj_player) &amp;&amp;
-            !instance_position(i-96,j-96,obj_player)
-            ){
-            draw_rectangle(i, j, i + 32, j + 32, false);
-        }else{
-            wall_blocked = false;
-            // handle light to the right
-            if(i &lt; obj_player.x){
-                
-                x_diff = abs(obj_player.x-i);
-                for(q=0;q&lt;=x_diff;q+=32){
-                    if(instance_position(i+q,j,obj_wall)){
-                        wall_blocked = true;
-                    }
-                }
-            }else if(i &gt; obj_player.x) {
-                if(j == obj_player.y) {
-                    x_diff = abs(obj_player.x-i);
-                    for(q=0;q&lt;=x_diff;q+=32){
-                        if(instance_position(i+(q*-1),j,obj_wall)){
-                            wall_blocked = true;
-                        }
-                    }
-                }
-            }
-                   
-            if(wall_blocked==false) {
-                draw_set_alpha(0.5);
-                draw_rectangle(i, j, i + 32, j + 32, false);  
-                draw_set_alpha(0.95);     
-            }else{
-                draw_rectangle(i, j, i + 32, j + 32, false);
-            }     
-        }
+            <string>for(i=0;i&lt;=room_width;i+=32;) {
+    for(j=0;j&lt;=room_height;j+=32;){
+        draw_sprite(spr_unseen,1,i,j);
     }
 }
-draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

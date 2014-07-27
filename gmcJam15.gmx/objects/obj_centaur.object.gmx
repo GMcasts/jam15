@@ -95,13 +95,14 @@ if(mouse_check_button_pressed(mb_left)) {
         handle_move(x_cell_diff,y_cell_diff);
         handle_attack(x_cell_diff, y_cell_diff);
     }else {
+        // do stuff when we click on the inventory
         if(obj_cursor.x &gt;= 384 &amp;&amp; obj_cursor.x &lt;= 576 &amp;&amp; obj_cursor.y &gt;= 0 &amp;&amp; obj_cursor.y &lt;= 32) {
             h = floor((obj_cursor.x - 384) /32)
             v = floor((obj_cursor.y - 0) /32);
             obj = ds_list_find_value(inventory, h+5*v);
             if(obj != 0) {
-                log_message("Selected "+string(ds_map_find_value(inventoryNames, obj)));
-                //ds_list_delete(inventory,h+5*v);
+                log_message("Use "+string(ds_map_find_value(inventoryNames, obj)));
+                ds_list_delete(inventory,h+5*v);
             }
         }
     }
