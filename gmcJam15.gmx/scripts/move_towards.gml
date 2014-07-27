@@ -6,6 +6,9 @@ if(moveX != x) {
         x += 32;
     }else{
         x -= 32;
+        if(moveX==x) {
+            reset_cursor();
+        }
     }
     if(moveX!=x) {
         alarm[0] = room_speed;

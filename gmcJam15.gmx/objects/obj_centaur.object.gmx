@@ -56,7 +56,7 @@ move_toX = 0;move_toY = 0;
             <kind>1</kind>
             <string>/// move towards point controller
 if(move_toX != x || move_toY != y){
-    move_towards(move_toX,move_toY);
+    move_towards(move_toX, move_toY);
 }
 
 </string>
@@ -90,6 +90,9 @@ if(move_toX != x || move_toY != y){
         handle_move(x_cell_diff,y_cell_diff);
         handle_attack(x_cell_diff, y_cell_diff);
     }
+}
+if(obj_cursor.x == x &amp;&amp; obj_cursor.y == y){
+    reset_cursor();
 }
 
 </string>
