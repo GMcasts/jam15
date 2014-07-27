@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
+STATE = "idle";
+HEALTH = 25;
 </string>
           </argument>
         </arguments>
@@ -50,16 +52,59 @@
             <kind>1</kind>
             <string>x_diff = abs(x-obj_centaur.x);
 y_diff = abs(y-obj_centaur.y);
-if(x_diff &lt;= 64 &amp;&amp; y_diff &lt;= 96) {
+
+if(x_diff &lt;= 32 &amp;&amp; y_diff &lt;= 32){
+    if(x!=obj_centaur.x){
+        if(obj_centaur.x &gt; x){
+            x += 32;
+        }else {
+            x -= 32;
+        }
+    }
+    if(HEALTH /25 &gt;= .9) {
+        image_index = 2;
+    }else if(HEALTH / 25 &gt;= 0.5){
+        image_index = 3;
+    }
+    if(STATE=="attack") {
+        STATE = "fighting";
+        log_message("You are under attack by an Eyeball!");
+    }
+}else if(x_diff &lt;= 64 &amp;&amp; y_diff &lt;= 96) {
     image_index = 1;
+    if(STATE == "idle") {
+        STATE="attack";
+        log_message("You've been spotted by an Eyeball!");
+    }
     
     //TODO: move_towards_player
-    if(is_moving){
-        y += 32;
-    }
-    //y += 32;
 }else {
     image_index = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_centaur">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!instance_position(x,y-32,obj_wall)) {
+    y -= 32;
 }
 </string>
           </argument>
