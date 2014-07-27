@@ -6,6 +6,11 @@ if(draw_attack) {
         log_message("You attack for "+string(dmg)+" DMG.");
         o = instance_nearest(obj_cursor.x, obj_cursor.y, obj_enemy);
         o.HEALTH -= dmg;
+        o.attack_counter += 1;
+        if(o.attack_counter == 3){
+            log_message("You have been hit for 3 DMG.");
+            o.attack_counter = 1;
+        }
     }
 
     //vertical attacks

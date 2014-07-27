@@ -44,6 +44,7 @@
       <script>scripts\move_towards.gml</script>
       <script>scripts\being_attaked.gml</script>
       <script>scripts\handle_attack.gml</script>
+      <script>scripts\handle_enemy_step.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
