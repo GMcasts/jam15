@@ -17,6 +17,10 @@
     <sprite>sprites\sprite8</sprite>
     <sprite>sprites\spr_fireExplosion</sprite>
     <sprite>sprites\spr_blackSmoke</sprite>
+    <sprite>sprites\spr_goldStatue</sprite>
+    <sprite>sprites\spr_inventorySlot</sprite>
+    <sprite>sprites\spr_tab</sprite>
+    <sprite>sprites\spr_lumpOfRoyalJelly</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_dungeon</background>
@@ -45,6 +49,7 @@
       <script>scripts\being_attaked.gml</script>
       <script>scripts\handle_attack.gml</script>
       <script>scripts\handle_enemy_step.gml</script>
+      <script>scripts\pick_up_item.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -52,12 +57,18 @@
     <object>objects\object1</object>
     <object>objects\obj_dungeonWall1</object>
     <object>objects\obj_centaur</object>
-    <object>objects\obj_enemy</object>
-    <object>objects\obj_player</object>
-    <object>objects\obj_wall</object>
     <object>objects\obj_fog</object>
     <object>objects\obj_eyeEnemy</object>
     <object>objects\obj_playerLog</object>
+    <object>objects\obj_lumpOfRoyalJelly</object>
+    <object>objects\obj_statue</object>
+    <object>objects\obj_inventorySlot</object>
+    <objects name="parents">
+      <object>objects\obj_item</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_player</object>
+      <object>objects\obj_enemy</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>

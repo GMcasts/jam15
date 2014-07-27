@@ -32,6 +32,10 @@ HORIZONTAL_MOVE = 6;
 valid_moves = ds_map_create();
 valid_attacks = ds_map_create();
 move_toX = 0;move_toY = 0;
+
+inventory = ds_list_create();
+inventoryNames = ds_map_create();
+
 </string>
           </argument>
         </arguments>
@@ -90,6 +94,16 @@ if(mouse_check_button_pressed(mb_left)) {
         //handle_horizontal_cursor(x_cell_diff);
         handle_move(x_cell_diff,y_cell_diff);
         handle_attack(x_cell_diff, y_cell_diff);
+    }else {
+        if(obj_cursor.x &gt;= 384 &amp;&amp; obj_cursor.x &lt;= 576 &amp;&amp; obj_cursor.y &gt;= 0 &amp;&amp; obj_cursor.y &lt;= 32) {
+            h = floor((obj_cursor.x - 384) /32)
+            v = floor((obj_cursor.y - 0) /32);
+            obj = ds_list_find_value(inventory, h+5*v);
+            if(obj != 0) {
+                log_message("Selected "+string(ds_map_find_value(inventoryNames, obj)));
+                //ds_list_delete(inventory,h+5*v);
+            }
+        }
     }
 }
 if(obj_cursor.x == x &amp;&amp; obj_cursor.y == y){
@@ -124,6 +138,25 @@ draw_vertical_movement(draw_movement, VERTICAL_MOVE);
 draw_horzontal_movement(draw_movement, HORIZONTAL_MOVE);
 
 draw_attack_indicator("Centaur");
+
+// draw slots
+cd = 0;
+for(i=0;i&lt;=5;i++){
+    v = 0;
+    for(j=0;j&lt;2;j++) {
+        
+        draw_sprite(spr_inventorySlot,0,384+cd, 0+v);
+        d = ds_list_find_value(inventory, (i + j*5) );
+        if(d!=0){
+            draw_sprite(d, 0, 384+cd, 0+v);
+        }
+        v += 32;
+    }
+    cd += 32;
+}
+for(q=0; q &lt; ds_list_size(inventory); q++) {
+    
+}
 
 </string>
           </argument>
