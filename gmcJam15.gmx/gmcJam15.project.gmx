@@ -70,6 +70,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_enemy</object>
     </objects>
+    <object>objects\obj_tile</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>

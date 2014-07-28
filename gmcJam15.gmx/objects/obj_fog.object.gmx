@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="8" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -27,7 +27,9 @@
             <kind>1</kind>
             <string>for(i=0;i&lt;=room_width;i+=32;) {
     for(j=0;j&lt;=room_height;j+=32;){
-        draw_sprite(spr_unseen,1,i,j);
+        //draw_sprite(spr_unseen,1,i,j);
+        o = instance_create(i, j, obj_tile);
+        o.image_index = 0;
     }
 }
 </string>
