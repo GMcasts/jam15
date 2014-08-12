@@ -58,7 +58,6 @@
     <object>objects\object1</object>
     <object>objects\obj_dungeonWall1</object>
     <object>objects\obj_centaur</object>
-    <object>objects\obj_fog</object>
     <object>objects\obj_eyeEnemy</object>
     <object>objects\obj_playerLog</object>
     <object>objects\obj_lumpOfRoyalJelly</object>
@@ -70,7 +69,10 @@
       <object>objects\obj_player</object>
       <object>objects\obj_enemy</object>
     </objects>
-    <object>objects\obj_tile</object>
+    <objects name="Fog_Effect">
+      <object>objects\obj_tile</object>
+      <object>objects\obj_fog</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>

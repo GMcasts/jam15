@@ -50,11 +50,13 @@ image_speed = 0;
           <argument>
             <kind>1</kind>
             <string>found_wall = false;
-if(distance_to_object(obj_player) &lt;= 192 ){
+if(distance_to_object(obj_player) &lt;= 192 &amp;&amp; (image_index == 0) ){
+    image_index = 1;
+    
     x_diff = x - obj_player.x;
     y_diff = y - obj_player.y;
 
-    if(x != obj_player.x || true==true){
+    if(x != obj_player.x){
 
         while(x_diff != 0) {
             if(instance_position(x-x_diff,y, obj_wall)){
@@ -66,14 +68,17 @@ if(distance_to_object(obj_player) &lt;= 192 ){
                 x_diff += 32;
             }
         }
-        if(image_index == 0 &amp;&amp; !found_wall){
+        //if(image_index == 0 &amp;&amp; !found_wall){
+        if( (image_index == 0 || image_index == 1) &amp;&amp; !found_wall){
             image_index = 1;
         }else if(found_wall) {
-            //image_index = 0;
+            //uncommented
+            image_index = 0;
         }else if(instance_position(x,y,obj_wall)){
             image_index = 1;
         }
     }
+    
     x_diff = x - obj_player.x;
     y_diff = y - obj_player.y;
 
@@ -88,10 +93,10 @@ if(distance_to_object(obj_player) &lt;= 192 ){
                 y_diff += 32;
             }
         }
-        if(image_index == 0 &amp;&amp; !found_wall){
+        if((image_index == 0 || image_index == 1) &amp;&amp; !found_wall){
             image_index = 1;
         }else if(found_wall) {
-            //image_index = 0;
+            image_index = 0;
         }else if(instance_position(x,y,obj_wall)){
             image_index = 1;
         }
